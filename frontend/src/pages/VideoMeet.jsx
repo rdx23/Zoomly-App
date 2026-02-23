@@ -11,9 +11,9 @@ import MicOffIcon from "@mui/icons-material/MicOff";
 import ScreenShareIcon from "@mui/icons-material/ScreenShare";
 import StopScreenShareIcon from "@mui/icons-material/StopScreenShare";
 import ChatIcon from "@mui/icons-material/Chat";
-// import server from "../environment";
+import server from "../environment";
 
-const server_url = "http://localhost:5000";
+const server_url = server;
 
 var connections = {};
 
@@ -437,19 +437,7 @@ export default function VideoMeetComponent() {
     return Object.assign(stream.getVideoTracks()[0], { enabled: false });
   };
 
-  // let handleVideo = () => {
-  //   setVideo(!video);
-    
-  // };
-
-  // let handleVideo = () => {
-  //   const videoTrack = localVideoref.current?.srcObject?.getVideoTracks()[0];
-
-  //   if (!videoTrack) return;
-
-  //   videoTrack.enabled = !videoTrack.enabled;
-  //   setVideo(videoTrack.enabled);
-  // };
+ 
 
   let handleVideo = () => {
     const stream = localVideoref.current?.srcObject;
@@ -470,16 +458,6 @@ export default function VideoMeetComponent() {
   };
 
 
-  // let handleVideo = () => {
-  //   const videoTrack = localVideoref.current?.srcObject?.getVideoTracks()[0];
-
-  //   if (!videoTrack) return;
-
-  //   const newState = !video;
-
-  //   videoTrack.enabled = newState;
-  //   setVideo(newState);
-  // };
 
 
 
